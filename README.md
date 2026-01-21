@@ -1,28 +1,47 @@
 # Port Monitor
 
-A beautiful macOS menu bar application for monitoring network ports and connections.
-
 ![macOS](https://img.shields.io/badge/macOS-14.0+-blue)
 ![Swift](https://img.shields.io/badge/Swift-5.9-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## Features
+## Что это такое?
 
-- **Menu Bar App** - Lives in your menu bar, no dock icon clutter
-- **Real-time Monitoring** - View all active network connections and listening ports
-- **Process Identification** - See which apps are using which ports with smart process detection
-- **Traffic Statistics** - Monitor incoming/outgoing traffic per process
-- **Smart Descriptions** - Automatic recognition of popular frameworks and services:
-  - Node.js (Vite, Next.js, Express, NestJS, etc.)
-  - Python (Django, Flask, FastAPI, etc.)
-  - Databases (PostgreSQL, MySQL, MongoDB, Redis)
-  - Apple Services (Identity Services, AirPlay, Sharing)
-  - And many more...
-- **macOS Tahoe Style** - Beautiful glassmorphism UI with transparency effects
-- **Search & Filter** - Quickly find ports by name, number, or process
-- **Kill Process** - Terminate processes directly from the app
+Port Monitor — это маленькое приложение для macOS, которое живёт в меню-баре (там, где часы и Wi-Fi) и показывает, какие программы на вашем компьютере используют сетевые порты.
 
-## Screenshots
+### Зачем это нужно?
+
+Если вы разработчик, наверняка сталкивались с ситуацией: запускаете проект, а порт 3000 уже занят. Кем? Непонятно. Приходится лезть в терминал, писать `lsof -i :3000`, разбираться в выводе...
+
+Port Monitor решает эту проблему — один клик по иконке в меню-баре, и вы видите:
+- Какие порты заняты
+- Какими приложениями (причём не просто "node", а "Vite dev server" или "Next.js")
+- Сколько трафика идёт через каждый порт
+- Можно тут же убить ненужный процесс
+
+### Что умеет приложение
+
+**Показывает понятные названия процессов.** Вместо cryptic "node" или "python3" вы увидите "Next.js", "Django", "Express.js", "PostgreSQL" и так далее. Приложение распознаёт 50+ популярных фреймворков и сервисов.
+
+**Отслеживает трафик.** Видно, сколько данных получено и отправлено через каждый порт — полезно, чтобы понять, какой процесс активно качает данные.
+
+**Фильтрует и ищет.** Можно быстро найти нужный порт по номеру, имени процесса или проекту.
+
+**Убивает процессы.** Наведите на строку и нажмите крестик — процесс будет завершён. Удобно, когда нужно освободить порт.
+
+**Выглядит нативно.** Интерфейс в стиле macOS с полупрозрачным фоном — приложение выглядит как часть системы, а не инородное тело.
+
+### Какие процессы распознаёт
+
+- **JavaScript/Node.js:** Vite, Next.js, Nuxt, Express, NestJS, Angular, React, Webpack и др.
+- **Python:** Django, Flask, FastAPI, Uvicorn, Gunicorn, Jupyter, Streamlit
+- **Ruby:** Rails, Sinatra, Puma
+- **PHP:** Laravel, Symfony
+- **Базы данных:** PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch
+- **Веб-серверы:** Nginx, Apache, Caddy
+- **Системные сервисы macOS:** AirPlay, Handoff, Screen Sharing, SSH и др.
+- **Браузеры и приложения:** Chrome, Safari, VS Code, Slack, Discord, Telegram и др.
+
+## Скриншоты
 
 <img src="screenshot.png" width="480" alt="Port Monitor Screenshot">
 
